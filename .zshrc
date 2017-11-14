@@ -96,3 +96,6 @@ alias ansible_role_create="ansible-galaxy init"
 alias tesa-sammelrepo="cd ~/Repos/1und1_Bitbucket/TESA/tesa-sammelrepo"
 alias ccat="ccat --bg=dark"
 alias python="/usr/local/bin/python2.7"
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
