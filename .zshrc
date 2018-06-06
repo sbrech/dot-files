@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/usr/local/bin:$HOME/Apps:$PATH
+export PATH=/usr/local/bin:$HOME/Apps:$HOME/go/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/sbrech/.oh-my-zsh
@@ -31,50 +31,25 @@ HIST_STAMPS="dd.mm.yyyy"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(colored-man-pages git zsh-syntax-highlighting docker)
+plugins=(colored-man-pages git zsh-syntax-highlighting docker fzf-zsh)
 
 source $ZSH/oh-my-zsh.sh
 
+##
 # User configuration
+##
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 export EDITOR='vim'
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 DEFAULT_USER=`whoami`
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-PATH=$PATH:/Users/sbrech/go/bin
-
-alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
-alias ansible_role_create="ansible-galaxy init"
-alias tesa-sammelrepo="cd ~/Repos/1und1_Bitbucket/TESA/tesa-sammelrepo"
-alias ccat="ccat --bg=dark"
-alias python="/usr/local/bin/python2.7"
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-alias contabo="ssh 173.212.201.124"
-
-##############################################################################
+##
 # History Configuration
-##############################################################################
+##
 HISTSIZE=5000               #How many lines of history to keep in memory
 HISTFILE=~/.zsh_history     #Where to save history to disk
 SAVEHIST=5000               #Number of history entries to save to disk
@@ -82,3 +57,20 @@ HISTDUP=erase               #Erase duplicates in the history file
 setopt    appendhistory     #Append history to the history file (no overwriting)
 setopt    sharehistory      #Share history across terminals
 setopt    incappendhistory  #Immediately append to the history file, not just when a term is killed
+
+## fzf
+# öffnet für fzf ein eigenes tmux Fenster
+export FZF_TMUX=1
+#
+export FZF_DEFAULT_OPTS='--no-reverse'
+
+##
+# Aliases
+##
+
+alias ansible_role_create="ansible-galaxy init"
+alias tesa-sammelrepo="cd ~/Repos/1und1_Bitbucket/TESA/tesa-sammelrepo"
+alias ccat="ccat --bg=dark"
+alias python="/usr/local/bin/python2.7"
+alias ls="exa"
+alias contabo="ssh 173.212.201.124"
