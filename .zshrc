@@ -8,7 +8,7 @@ export ZSH=/Users/sbrech/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="sbrech"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
@@ -73,4 +73,6 @@ alias tesa-sammelrepo="cd ~/Repos/1und1_Bitbucket/TESA/tesa-sammelrepo"
 alias ccat="ccat --bg=dark"
 alias python="/usr/local/bin/python2.7"
 alias ls="exa"
-alias contabo="ssh 173.212.201.124"
+alias contabo="ssh x353ZwZuUwcW@sbrech.de"
+
+zstyle :prompt:shrink_path fish yes
