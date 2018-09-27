@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/usr/local/bin:$HOME/Apps:$HOME/go/bin:$PATH
+export PATH="/usr/local/bin:$HOME/Apps:$HOME/go/bin:$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/sbrech/.oh-my-zsh
@@ -17,7 +17,7 @@ DISABLE_AUTO_UPDATE="true"
 export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -31,7 +31,7 @@ HIST_STAMPS="dd.mm.yyyy"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(colored-man-pages git zsh-syntax-highlighting docker fzf-zsh)
+plugins=(colored-man-pages git zsh-syntax-highlighting docker fzf-zsh kubectl brew)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -69,10 +69,12 @@ export FZF_DEFAULT_OPTS='--no-reverse'
 ##
 
 alias ansible_role_create="ansible-galaxy init"
+alias ssh_ansible="ssh -i Repos/1und1_Bitbucket/TESA/tesa-sammelrepo/ansible/files/tool_ssh_keys/id_rsa_ansible -l jboss"
 alias tesa-sammelrepo="cd ~/Repos/1und1_Bitbucket/TESA/tesa-sammelrepo"
 alias ccat="ccat --bg=dark"
 alias python="/usr/local/bin/python2.7"
-alias ls="exa"
 alias contabo="ssh x353ZwZuUwcW@sbrech.de"
+alias ls="ls -G"
+alias l="ls -la"
 
 zstyle :prompt:shrink_path fish yes
