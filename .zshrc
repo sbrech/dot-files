@@ -8,7 +8,16 @@ export ZSH=/Users/sbrech/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="sbrech"
+# ZSH_THEME="sbrech"
+ZSH_THEME="spaceship"
+SPACESHIP_GIT_PREFIX="[git: "
+SPACESHIP_GIT_SUFFIX="] "
+SPACESHIP_PACKAGE_SHOW=false
+SPACESHIP_NODE_SHOW=false
+SPACESHIP_KUBECONTEXT_PREFIX="[kube: "
+SPACESHIP_KUBECONTEXT_SUFFIX="] "
+SPACESHIP_KUBECONTEXT_SHOW=false
+SPACESHIP_BATTERY_SHOW=false
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
@@ -31,7 +40,7 @@ HIST_STAMPS="dd.mm.yyyy"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(colored-man-pages git zsh-syntax-highlighting docker fzf-zsh kubectl brew)
+plugins=(colored-man-pages git zsh-syntax-highlighting docker fzf-zsh brew kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -46,6 +55,11 @@ export EDITOR='vim'
 DEFAULT_USER=`whoami`
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+## kube-ps1
+#source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+#export PS1='$(kube_ps1)'$PS1
+#export KUBE_PS1_SYMBOL_USE_IMG=true
 
 ##
 # History Configuration
@@ -76,5 +90,8 @@ alias python="/usr/local/bin/python2.7"
 alias contabo="ssh x353ZwZuUwcW@sbrech.de"
 alias ls="ls -G"
 alias l="ls -la"
+alias kctl="kubectl"
+alias kubeon="export SPACESHIP_KUBECONTEXT_SHOW=true"
+alias kubeoff="export SPACESHIP_KUBECONTEXT_SHOW=false"
 
-zstyle :prompt:shrink_path fish yes
+#zstyle :prompt:shrink_path fish yes
